@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+# Removed .env so it uploads to cloud build
+.git
+.gitignore
+README.md
+# dist (removed to allow local build deployment)
+tests
+.prettierrc
+.eslintrc.json

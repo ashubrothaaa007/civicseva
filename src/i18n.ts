@@ -1,0 +1,167 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+const resources = {
+  en: {
+    translation: {
+      appName: 'CivicSeva',
+      nav: {
+        dashboard: 'Dashboard',
+        registration: 'Registration',
+        timeline: 'Timeline',
+        voting: 'How to Vote',
+        booth: 'Find Booth',
+        candidates: 'Candidates',
+        systems: 'Electoral Systems',
+        assistant: 'AI Assistant',
+        wizard: 'Election Wizard',
+      },
+      dashboard: {
+        welcome: "Your Election Dashboard",
+        signInDesc: "Sign in to access personalized election information.",
+        quickActions: 'Quick Actions',
+        registration: 'Registration',
+        constituency: 'Constituency',
+        nextElection: 'Next Election',
+        reminders: 'Reminders',
+        verified: 'Verified',
+        pending: 'Pending',
+        notSet: 'Not Set',
+        active: '2 Active',
+        checkRegistration: 'Check Registration',
+        viewTimeline: 'View Timeline',
+        findBooth: 'Find My Booth',
+        askAI: 'Ask AI Assistant',
+      },
+      eligibility: {
+        title: 'Eligibility Checker',
+        desc: 'Answer a few questions to check if you\'re eligible to vote.',
+        age: 'Your Age',
+        citizenship: 'Citizenship',
+        state: 'State / Province',
+        selectStatus: 'Select status',
+        citizen: 'Citizen',
+        permanentResident: 'Permanent Resident',
+        other: 'Other',
+        agePlaceholder: 'e.g. 25',
+        statePlaceholder: 'e.g. Maharashtra',
+        checkBtn: 'Check My Eligibility',
+        checking: 'Checking...',
+        eligible: 'You\'re Eligible!',
+        notEligible: 'Not Eligible',
+        eligibleMsg: 'You are eligible to vote{{state}}! Make sure you are registered before the deadline.',
+        notEligibleMsg: 'You do not meet the eligibility criteria. You must be at least 18 years old and a citizen.',
+      },
+      assistant: {
+        title: 'Election Assistant',
+        desc: 'Ask any question about elections and voting — non-partisan, always helpful.',
+        online: 'Online • Non-partisan guide',
+        inputPlaceholder: 'Ask about elections, voting, registration...',
+        welcome: `👋 Hi! I'm **CivicSeva AI** — your non-partisan election guide.\n\nAsk me about:\n• **Voter registration** steps\n• **Eligibility** requirements\n• **How to vote** on Election Day\n• **Electoral systems** and processes`,
+      },
+      wizard: {
+        title: 'Election Guide Wizard',
+        desc: 'A step-by-step guide to completing your civic duties.',
+        step1: 'Check Eligibility',
+        step2: 'Register to Vote',
+        step3: 'Find Constituency',
+        step4: 'Locate Booth',
+        step5: 'Voting Day',
+        next: 'Next Step',
+        prev: 'Previous',
+        finish: 'Finish',
+        complete: 'All Steps Complete!',
+        completedMsg: 'You\'re ready to vote. See you on Election Day! 🗳️',
+      },
+      common: {
+        loading: 'Loading...',
+        signIn: 'Sign in with Google',
+        signOut: 'Sign out',
+        getDirections: 'Get Directions',
+        search: 'Search',
+        searching: 'Searching...',
+      },
+    },
+  },
+  hi: {
+    translation: {
+      appName: 'सिविकसेवा',
+      nav: {
+        dashboard: 'डैशबोर्ड',
+        registration: 'पंजीकरण',
+        timeline: 'समयरेखा',
+        voting: 'कैसे वोट करें',
+        booth: 'बूथ खोजें',
+        candidates: 'उम्मीदवार',
+        systems: 'चुनाव प्रणाली',
+        assistant: 'AI सहायक',
+        wizard: 'चुनाव गाइड',
+      },
+      dashboard: {
+        welcome: 'आपका चुनाव डैशबोर्ड',
+        signInDesc: 'व्यक्तिगत चुनाव जानकारी के लिए साइन इन करें।',
+        quickActions: 'त्वरित क्रियाएं',
+        registration: 'पंजीकरण',
+        constituency: 'निर्वाचन क्षेत्र',
+        nextElection: 'अगला चुनाव',
+        reminders: 'अनुस्मारक',
+        verified: 'सत्यापित',
+        pending: 'लंबित',
+        notSet: 'सेट नहीं',
+        active: '2 सक्रिय',
+        checkRegistration: 'पंजीकरण जांचें',
+        viewTimeline: 'समयरेखा देखें',
+        findBooth: 'मेरा बूथ खोजें',
+        askAI: 'AI से पूछें',
+      },
+      common: {
+        loading: 'लोड हो रहा है...',
+        signIn: 'Google से साइन इन करें',
+        signOut: 'साइन आउट',
+        getDirections: 'दिशाएं प्राप्त करें',
+        search: 'खोजें',
+        searching: 'खोज रहा है...',
+      },
+    },
+  },
+  ta: {
+    translation: {
+      appName: 'சிவிக்சேவா',
+      nav: {
+        dashboard: 'டாஷ்போர்டு',
+        registration: 'பதிவு',
+        timeline: 'நேரலைன்',
+        voting: 'எப்படி வாக்களிப்பது',
+        booth: 'வாக்கு சாவடி',
+        candidates: 'வேட்பாளர்கள்',
+        systems: 'தேர்தல் முறைகள்',
+        assistant: 'AI உதவியாளர்',
+        wizard: 'தேர்தல் வழிகாட்டி',
+      },
+      common: {
+        loading: 'ஏற்றுகிறது...',
+        signIn: 'Google மூலம் உள்நுழைக',
+        signOut: 'வெளியேறு',
+        getDirections: 'திசைகளைப் பெறு',
+        search: 'தேடு',
+        searching: 'தேடுகிறது...',
+      },
+    },
+  },
+};
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'en',
+    interpolation: { escapeValue: false },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    },
+  });
+
+export default i18n;

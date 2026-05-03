@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can only read and write their own data
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Anyone can read public election information
+    match /elections/{electionId} {
+      allow read: if true;
+      allow write: if false; // Only admin via backend can write
+    }
+
+    match /booths/{boothId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
